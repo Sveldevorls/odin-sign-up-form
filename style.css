@@ -1,65 +1,77 @@
-body{
+:root {
+    --side-width: 30%;
+}
+
+body {
+    min-height: 100vh;
     margin: 0;
-    height: 100vh;
-    width: 100vw;
     display: flex;
 }
 
 .side{
-    height: 100%;
-    width: 30%;
+    width: var(--side-width);
     background: url(./img/side-bg.jpg) center;
     background-size: cover;
+    z-index: 2;
 }
 
 .banner {
     height: 15%;
+    width: 100%;
     position: relative;
     top: 20%;
     background-color: rgb(255, 255, 255, 0.7);
+    font-family: "Racing Sans One";
+    font-size: 2rem;
 }
 
 .banner {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
     gap: 1ch;
 }
 
 .main{
-    height: 100%;
-    width: 70%;
+    width: calc(100% - var(--side-width));
     background-color: #F0F0F0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .main {
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 2rlh;
+    gap: 2lh;
 }
 
 .main > div > * {
     margin-left: 5%;
 }
 
-p {
-    margin: 0;
-    max-width: 50ch;
+.msg {
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
-p + p {
+p {
+    margin: 0;
+    max-width: 65ch;
+}
+
+*:not(img) + p {
     margin-top: 1lh;
 }
 
-.form {
+.form-block {
+    padding: 1lh 0;
+    position: relative;
+    z-index: 1;
     background: white;
+    box-shadow: 0px 3px 10px gray;
 }
 
-.form-inner {
+form {
     display: flex;
     gap: 10%;
 }
@@ -71,4 +83,50 @@ p + p {
 
 input + label {
     margin-top: 0.7lh;
+}
+
+.submit-button {
+    background-color: hsl(276, 27%, 14%);
+    color: white;
+    font-size: 1rem;
+    width: 25%;
+    height: 2lh;
+    border: none;
+    border-radius: 0.5lh;
+    box-shadow: 0px 2px 3px gray;
+    transition: ease-in-out 0.5s;
+}
+
+.submit-button:hover {
+    background-color: hsl(276, 27%, 30%);
+}
+
+label {
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+}
+
+input {
+    border-radius: 3px;
+}
+
+input:not([type=submit]):valid {
+    box-shadow: 0px 0px 3px green;
+    border: 1.5px solid green;
+}
+
+input:invalid {
+    box-shadow: 0px 0px 3px red;
+    border: 1.5px solid red;
+}
+
+input:placeholder-shown {
+    box-shadow: none;
+    border: 1.5px solid gray;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0px 0px 3px blue;
+    border: 1.5px solid blue;
 }

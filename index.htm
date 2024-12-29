@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -15,32 +18,32 @@
     </div>
     <div class="main">
         <div class="msg">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nulla in recusandae cupiditate molestiae excepturi ducimus! Reiciendis ab aspernatur ipsum, saepe, expedita ipsa ut similique laborum sint sed pariatur dicta?</p>
+            <p>This is not a real website. Ceci n'est pas un real website. Dieser ist nicht ein realig Website. Esta no es una website que existe.</p>
             <p>Lorem ipsum dolor sit amet</p>
         </div>
-        <div class="form">
-            <p>Join now</p>
-            <div class="form-inner">
+        <div class="form-block">
+            <p>Join now <strong>(all fields required)</strong></p><br>
+            <form id="user-form">
                 <div class="col">
                     <label for="first-name">First name</label>
-                    <input type="text" id="first-name">
+                    <input type="text" id="first-name" placeholder="" required>
                     <label for="email">Email</label>
-                    <input type="email" id="email">
+                    <input type="email" id="email" placeholder="" required>
                     <label for="password">Password</label>
-                    <input type="password" id="password">
+                    <input type="password" id="password" placeholder="" required>
                 </div>
                 <div class="col">
                     <label for="last-name">Last name</label>
-                    <input type="text" id="last-name">
+                    <input type="text" id="last-name" placeholder="" required>
                     <label for="phone">Phone number</label>
-                    <input type="tel" id="phone">
+                    <input type="tel" id="phone" placeholder="" required>
                     <label for="password-confirm">Confirm password</label>
-                    <input type="password" id="password-confirm">
+                    <input type="password" id="password-confirm" placeholder="" required>
                 </div>
-            </div> 
+            </form>
         </div>
         <div class="submit">
-            <button>Create account</button>
+            <input type="submit" value="Create account" form="user-form" class="submit-button">
             <p>Already have an account? <a href="#">Click here</a></p>
         </div>
     </div>
